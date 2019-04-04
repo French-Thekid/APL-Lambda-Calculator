@@ -1,1 +1,27 @@
+.footer{
+    width:100px;
+    height:20px;
+    background-color:"dark";
 
+}
+ion-button{
+    width:80%;
+    height:10%;
+    border-radius:11px;
+    border:1px solid dodgerblue;
+    font-family: "monserrat";
+    font-size:26px;
+    color:white;
+}
+ion-title{
+    text-shadow: 1px 1px dodgerblue;
+    font-family: "monserrat";
+    font-size:30px;
+}
+ion-toolbar{
+    border-bottom: 1px solid dodgerblue;
+}
+#Menu{
+    height:90%;
+    width:100%;
+}

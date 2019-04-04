@@ -1,14 +1,24 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="dark">
     <ion-title>
-      Ionic Blank
+      Home
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+  <div>
+    
   </div>
+  <div style="background-color:rgba(0,0,0,0.5);width:100%;height:95%" class="Menu" >
+    <br><br><br><br><br><br><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<ion-button color="dark" (click)="send()"><ion-icon name="chatbubbles"></ion-icon>&nbsp;Send Message&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</ion-button><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<ion-button color="dark" (click)="recieve()"><ion-icon name="chatbubbles"></ion-icon>&nbsp;Recieve Message</ion-button><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<ion-button color="dark" (click)="lambda()"><ion-icon name="calculator"></ion-icon>Lambda Calculator</ion-button><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<ion-button color="dark" (click)="about()"><ion-icon name="information-circle"></ion-icon>&nbsp;About&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</ion-button><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<ion-button color="dark" (click)="quit()"><ion-icon name="power"></ion-icon>&nbsp;Quit Application&nbsp;&nbsp;&nbsp;&nbsp;</ion-button>
+  </div>
+  <div style="font-family:monserrat;border-top:1px solid dodgerblue;height:5%;width:100%;color:silver;background-color:#1e2023" class="footer">
+     &copy; 01/04/2019 This application was developed by French.Co</div>
 </ion-content>
+

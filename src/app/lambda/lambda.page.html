@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar color="dark">
+      <ion-button id="back" color="dark" [ngStyle]="{'background-color':btncolor}" float-left (click)="back()">
+          <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    <ion-title>Lambda Calculator</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div style="background-color:rgba(0,0,0,0.5);width:100%;height:97%">
+          <br>
+            &nbsp;&nbsp;&nbsp;
+            <input disabled value={{quest}} style="font-family:monserrat;color:white;border:1px solid dodgerblue;width:90%;height:50px;background:rgba(0,0,0,0.3);font-size:20px" type="text" placeholder="Input" >
+            <br><br>
+            &nbsp;&nbsp;&nbsp;
+            <button (click)="value('(')" id="button">(</button>&nbsp;&nbsp;&nbsp;
+            <button (click)="value(')')" id="button">)</button>&nbsp;&nbsp;&nbsp;
+            <button (click)="value('λ')" id="button">λ</button>&nbsp;&nbsp;&nbsp;
+            <button (click)="operator('*')" id="button">*</button><br><br>
+            &nbsp;&nbsp;&nbsp;
+            <button (click)="value('7')" id="button">7</button>&nbsp;&nbsp;&nbsp;
+            <button (click)="value('8')" id="button">8</button>&nbsp;&nbsp;&nbsp;
+            <button (click)="value('9')" id="button">9</button>&nbsp;&nbsp;&nbsp;
+            <button (click)="operator('-')" id="button">-</button><br><br>
+            &nbsp;&nbsp;&nbsp;
+            <button (click)="value('4')" id="button">4</button>&nbsp;&nbsp;&nbsp;
+            <button (click)="value('5')" id="button">5</button>&nbsp;&nbsp;&nbsp;
+            <button (click)="value('6')" id="button">6</button>&nbsp;&nbsp;&nbsp;
+            <button (click)="operator('+')" id="button">+</button><br><br>
+            &nbsp;&nbsp;&nbsp;
+            <button (click)="value('1')" id="button">1</button>&nbsp;&nbsp;&nbsp;
+            <button (click)="value('2')" id="button">2</button>&nbsp;&nbsp;&nbsp;
+            <button (click)="value('3')" id="button">3</button>&nbsp;&nbsp;&nbsp;
+            <button (click)="calculate()" id="button">=</button><br><br>
+            &nbsp;&nbsp;&nbsp;
+            <button (click)="value('0')" id="button">0</button>&nbsp;&nbsp;&nbsp;
+            <button (click)="value('X')" id="button">X</button>&nbsp;&nbsp;&nbsp;
+            <button (click)="value('Y')" id="button">Y</button>&nbsp;&nbsp;&nbsp;
+            <button type="reset" (click)="value('del')" id="button">Del</button><br><br> 
+            &nbsp;&nbsp;&nbsp;
+            <button type="reset" (click)="value('.')" id="button">.</button>&nbsp;&nbsp;&nbsp;
+            <button style="width:65%" type="reset" (click)="value(' ')" id="button">Space</button>
+    </div>
+    <div style="font-family:monserrat;border-top:1px solid dodgerblue;height:5%;width:100%;color:silver;background-color:#1e2023" class="footer">
+        &copy; 01/04/2019 This application was developed by French.Co</div>
+     
+</ion-content>
