@@ -14,7 +14,7 @@
             <input disabled value={{quest}} style="font-family:monserrat;color:white;border:1px solid dodgerblue;width:90%;height:50px;background:rgba(0,0,0,0.3);font-size:20px" type="text" placeholder="Input" >
             <br><br>
             &nbsp;&nbsp;&nbsp;
-            <button (click)="value('(')" id="button">(</button>&nbsp;&nbsp;&nbsp;
+            <button [ngStyle]="{'background-color':buttonColor}" (click)="value('(')" id="button">(</button>&nbsp;&nbsp;&nbsp;
             <button (click)="value(')')" id="button">)</button>&nbsp;&nbsp;&nbsp;
             <button (click)="value('λ')" id="button">λ</button>&nbsp;&nbsp;&nbsp;
             <button (click)="operator('*')" id="button">*</button><br><br>
@@ -32,7 +32,7 @@
             <button (click)="value('1')" id="button">1</button>&nbsp;&nbsp;&nbsp;
             <button (click)="value('2')" id="button">2</button>&nbsp;&nbsp;&nbsp;
             <button (click)="value('3')" id="button">3</button>&nbsp;&nbsp;&nbsp;
-            <button (click)="calculate()" id="button">=</button><br><br>
+            <button (click)="calculate()" style="background-color:dodgerblue;border:1px solid black" id="button">=</button><br><br>
             &nbsp;&nbsp;&nbsp;
             <button (click)="value('0')" id="button">0</button>&nbsp;&nbsp;&nbsp;
             <button (click)="value('X')" id="button">X</button>&nbsp;&nbsp;&nbsp;
@@ -40,7 +40,12 @@
             <button type="reset" (click)="value('del')" id="button">Del</button><br><br> 
             &nbsp;&nbsp;&nbsp;
             <button type="reset" (click)="value('.')" id="button">.</button>&nbsp;&nbsp;&nbsp;
-            <button style="width:65%" type="reset" (click)="value(' ')" id="button">Space</button>
+            <button style="width:65%" type="reset" (click)="value(' ')" id="button">Space</button><br><br>
+            <div style="font-size:18px;font-family:monserrat;height:35px;background:rgba(0,0,0,0.4);width:300px;color:white;border:1px solid dodgerblue;border-radius:4em;">
+               <ion-toggle [(ngModel)]="Advanced" checked="true" color="primary">Advanced Calculations</ion-toggle>
+               Advanced Calculations
+            </div>
+            
     </div>
     <div style="font-family:monserrat;border-top:1px solid dodgerblue;height:5%;width:100%;color:silver;background-color:#1e2023" class="footer">
         &copy; 01/04/2019 This application was developed by French.Co</div>
