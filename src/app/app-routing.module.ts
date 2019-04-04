@@ -12,7 +12,8 @@ const routes: Routes = [
     loadChildren: './recieve/recieve.module#RecievePageModule'
   },
   { path: 'lambda', loadChildren: './lambda/lambda.module#LambdaPageModule' },
-  { path: 'chats/:id', component: ChatComponent }
+  //{ path: 'chatt', loadChildren: './chatt/chatt.module#CHATTPageModule' },
+  //{ path: 'chats/:id', component: ChatComponent }
 ];
 
 @NgModule({

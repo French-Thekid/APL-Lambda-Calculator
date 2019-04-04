@@ -11,14 +11,14 @@ import { Observable } from 'rxjs';
   templateUrl: 'app.component.html'
 })
 export class AppComponent {
-  items: Observable<any[]>;
+ // items: Observable<any[]>;
   constructor(
-    db: AngularFirestore,
+   // db: AngularFirestore,
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar
   ) {
-    this.items = db.collection('items').valueChanges();
+   // this.items = db.collection('items').valueChanges();
     this.initializeApp();
   }
 

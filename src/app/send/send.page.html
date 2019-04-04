@@ -8,5 +8,16 @@
 </ion-header>
 
 <ion-content>
+  <div style="height:92.4%" id="messages">
 
+  </div>
+  <div style="display: flex; height:50px; width:100%;background-color:#1e2023;border-bottom:1px solid dodgerblue; border-top:1px solid dodgerblue">
+    
+    <ion-input style="background-color:rgba(0,0,0,0.3);width:70%;color:white;font-family:monserrat"> </ion-input> 
+
+    <ion-button style="border-radius: 0;height:42px;" id="back" color="dark" [ngStyle]="{'background-color':btncolor}" float-right (click)="send()">
+        <ion-icon name="send"></ion-icon>
+    </ion-button>
+
+  </div>
 </ion-content>

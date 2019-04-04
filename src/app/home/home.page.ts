@@ -23,6 +23,7 @@ export class HomePage {
     this.router.navigate(['about']);
   }
   quit(){
-    //this.platform.exitApp();
+   // this.router.dispose();
+   // navigator.app.exitApp(). //Exit from app
   }
 }
