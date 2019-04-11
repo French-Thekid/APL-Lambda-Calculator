@@ -43,10 +43,11 @@ export class LambdaPage implements OnInit {
   activatePopup() {
    
   }
-  calculate(){
+  async calculate(){
     if(this.Advanced==true)
     {
       this.frag=this.quest.split(")");//splitting function
+      var OOouternum =this.frag[3];
       var Oouternum = this.frag[2];
       var outernum= this.frag[1];//getting second function/expression
       var Olength= outernum.length;
@@ -71,6 +72,7 @@ export class LambdaPage implements OnInit {
       }
       if(done==false){
           if(SHalfs[1]!=""){
+              var Sthalf=SHalfs[2];
               var Sshalf=SHalfs[1];
               var Sfhalf=SHalfs[0];
               var DShalf=Sfhalf.split("λ");
@@ -133,10 +135,14 @@ export class LambdaPage implements OnInit {
       var cal;
       var cal1;
       var cal2;
+      var cal3;
+      var cal4;
       this.frag=this.quest.split(")");//splitting function
       var fHalf=this.frag[0];
       var sHalf=this.frag[1];
       var tHalf=this.frag[2];
+      var ffHalf=this.frag[3];
+      var FHalf=this.frag[4];
       if(sHalf==""){
         var DFhalf=fHalf.split("(");
         var val = DFhalf[1];
@@ -197,7 +203,7 @@ export class LambdaPage implements OnInit {
          
           this.quest=cal1;
        }
-       else if(tHalf!=""){
+       else if((tHalf!="")&&(ffHalf=="")){
          //First calculation
          var fSec=fHalf.split("(");
          var first=fSec[3];
@@ -247,7 +253,157 @@ export class LambdaPage implements OnInit {
         
         this.quest=cal2;
       }
+      else if((ffHalf!="")&&(FHalf=="")){
+        //first
+        var fSect=fHalf.split("(");
+        var fSecTT=fSect[4]
+        var func = fSecTT.split(" ");
+        var op = func[0];
+        var num1 = parseInt(func[1]);
+        var num2 = parseInt(func[2]);
+        switch(op){
+          case "+":
+            cal= num1+num2;
+          break;
+          case "*":
+            cal= num1*num2;
+          break;
+          case "-":
+            cal= num1-num2;
+          break;
+        } 
+        this.quest=cal;
+        //sec
+         var sVal = parseInt(sHalf);
+         var fSectt=fHalf.split("(");
+         var Sop=fSectt[3];
+        switch(Sop){
+             case "+":
+               cal1= cal+sVal;
+             break;
+             case "*":
+               cal1= cal*sVal;
+             break;
+             case "-":
+               cal1= cal-sVal;
+             break;
+         } 
+         //third
+         var fval=parseInt(tHalf);
+         this.quest=fval;
+         var fSecttt=fHalf.split("(");
+         var top=fSecttt[2];
+         switch(top){
+              case "+":
+                cal2= cal1+fval;
+              break;
+              case "*":
+                cal2= cal1*fval;
+              break;
+              case "-":
+                cal2= cal1-fval;
+              break;
+          } 
+          // final
+          var fval=parseInt(ffHalf);
+          var fSectttt=fHalf.split("(");
+          var top=fSectttt[1];
+         switch(top){
+              case "+":
+                cal3= cal2+fval;
+              break;
+              case "*":
+                cal3= cal2*fval;
+              break;
+              case "-":
+                cal3= cal2-fval;
+              break;
+          } 
+       this.quest=cal3;
+      }
+      else if(FHalf!=""){
+         //first
+         var fSect=fHalf.split("(");
+         var fSecTT=fSect[5]
+         var func = fSecTT.split(" ");
+         var op = func[0];
+         var num1 = parseInt(func[1]);
+         var num2 = parseInt(func[2]);
+         switch(op){
+           case "+":
+             cal= num1+num2;
+           break;
+           case "*":
+             cal= num1*num2;
+           break;
+           case "-":
+             cal= num1-num2;
+           break;
+         } 
+         this.quest=cal;
+         //sec
+          var sVal = parseInt(sHalf);
+          var fSectt=fHalf.split("(");
+          var Sop=fSectt[4];
+         switch(Sop){
+              case "+":
+                cal1= cal+sVal;
+              break;
+              case "*":
+                cal1= cal*sVal;
+              break;
+              case "-":
+                cal1= cal-sVal;
+              break;
+          } 
+          //third
+          var fval=parseInt(tHalf);
+          this.quest=fval;
+          var fSecttt=fHalf.split("(");
+          var top=fSecttt[3];
+          switch(top){
+               case "+":
+                 cal2= cal1+fval;
+               break;
+               case "*":
+                 cal2= cal1*fval;
+               break;
+               case "-":
+                 cal2= cal1-fval;
+               break;
+           } 
+           // forth
+           var fval=parseInt(ffHalf);
+           var fSectttt=fHalf.split("(");
+           var top=fSectttt[2];
+          switch(top){
+               case "+":
+                 cal3= cal2+fval;
+               break;
+               case "*":
+                 cal3= cal2*fval;
+               break;
+               case "-":
+                 cal3= cal2-fval;
+               break;
+           } 
+            // final
+            var fval=parseInt(FHalf);
+           var fSecttttt=fHalf.split("(");
+           var top=fSecttttt[1];
+          switch(top){
+               case "+":
+                 cal4= cal3+fval;
+               break;
+               case "*":
+                 cal4= cal3*fval;
+               break;
+               case "-":
+                 cal4= cal3-fval;
+               break;
+           } 
+        this.quest=cal4;
+      }
     }
-    
   }
 }

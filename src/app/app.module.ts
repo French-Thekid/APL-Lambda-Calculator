@@ -5,28 +5,39 @@ import { RouteReuseStrategy } from '@angular/router';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-
+import { SMS } from '@ionic-native/sms/ngx';
+import { UserService } from './user.service';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-
-import { AngularFireModule } from '@angular/fire';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import firebaseConfig from "./firebase"
+import { AngularFirestoreModule } from '@angular/fire/firestore'
+import { AngularFirestore } from '@angular/fire/firestore'
+import { AngularFireDatabase } from 'angularfire2/database';
+import { CallNumber } from '@ionic-native/call-number/ngx';
+
 
 @NgModule({
   declarations: [AppComponent],
-  entryComponents: [],
+  entryComponents: [  ],
   imports: [
     BrowserModule,
-    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireAuthModule,
     IonicModule.forRoot(),
-    AppRoutingModule
+    AngularFirestoreModule,
+    AppRoutingModule,              
+    AngularFireAuthModule   
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    SMS,
+    CallNumber,
+    AngularFirestore,
+    AngularFireDatabase,
+    UserService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

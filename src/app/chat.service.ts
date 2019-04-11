@@ -1,20 +1,52 @@
-import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
+/*import { Injectable } from '@angular/core';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { AuthService } from './auth.service';
 import { Router } from '@angular/router';
 import { firestore } from 'firebase/app';
 import { map, switchMap } from 'rxjs/operators';
 import { Observable, combineLatest, of } from 'rxjs';
 
+
+export interface chat {
+  name: string;
+  message: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
 export class ChatService {
-  constructor(
-    private afs: AngularFirestore,
-    private auth: AuthService,
-    private router: Router
-  ) {}
+
+private chatsCollection: AngularFirestoreCollection<chat>;
+
+private chats: Observable<chat[]>;
+
+  constructor(db: AngularFirestore) {
+    this.chatsCollection = db.collection<chat>('chats');
+
+    this.chats = this.chatsCollection.snapshotChanges().pipe(
+      map(actions => {
+        return actions.map(a => {
+          const data = a.payload.doc.data();
+          const id = a.payload.doc.id;
+          return { id, ...data };
+        });
+      })
+    );
+  }
+
+  getChats() {
+    return this.chats;
+  }
+
+  getChat(id) {
+    return this.chatsCollection.doc<chat>(id).valueChanges();
+  }
+
+  addChat(chat: chat) {
+    return this.chatsCollection.add(chat);
+  }
+}
 
   get(chatId) {
     return this.afs
@@ -87,4 +119,4 @@ export class ChatService {
       })
     );
   }
-}
+}*/
